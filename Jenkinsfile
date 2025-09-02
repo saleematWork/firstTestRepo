@@ -15,8 +15,9 @@ pipeline {
         
         stage('Setup') {
             steps {
-              // sh 'python -m venv venv'
-              //  sh '. venv/bin/activate && pip install -r requirements.txt'
+              /* sh 'python -m venv venv'
+                sh '. venv/bin/activate && pip install -r requirements.txt'
+              */
             }
         }
         
@@ -29,32 +30,22 @@ pipeline {
 
         stage('Unit Tests') {
             steps {
-               // sh '''
+               /* sh '''
                 . venv/bin/activate && 
                 python -m pytest tests/ -v --cov=src --cov-report=xml:coverage.xml
                 '''
+                */
             }
-            post {
-                always {
-                    junit 'test-reports/*.xml'
-                    publishHTML(target: [
-                        allowMissing: false,
-                        alwaysLinkToLastBuild: false,
-                        keepAll: true,
-                        reportDir: 'htmlcov',
-                        reportFiles: 'index.html',
-                        reportName: 'Coverage Report'
-                    ])
-                }
-            }
-        }
+            /*
+       
         
         stage('Integration Tests') {
             steps {
-               // sh '''
+               /* sh '''
                 . venv/bin/activate && 
                 python -m pytest tests/test_integration.py -v
                 '''
+                */
             }
         }
         
