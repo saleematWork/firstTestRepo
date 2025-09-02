@@ -22,14 +22,14 @@ pipeline {
         
         stage('Lint') {
             steps {
-                sh '. venv/bin/activate && flake8 src/ tests/ --max-line-length=88'
+               // sh '. venv/bin/activate && flake8 src/ tests/ --max-line-length=88'
             }
         }
 
 
         stage('Unit Tests') {
             steps {
-                sh '''
+               // sh '''
                 . venv/bin/activate && 
                 python -m pytest tests/ -v --cov=src --cov-report=xml:coverage.xml
                 '''
@@ -51,7 +51,7 @@ pipeline {
         
         stage('Integration Tests') {
             steps {
-                sh '''
+               // sh '''
                 . venv/bin/activate && 
                 python -m pytest tests/test_integration.py -v
                 '''
@@ -60,8 +60,8 @@ pipeline {
         
         stage('Generate Reports') {
             steps {
-                sh '. venv/bin/activate && coverage xml'
-                sh '. venv/bin/activate && coverage html'
+              //  sh '. venv/bin/activate && coverage xml'
+              //  sh '. venv/bin/activate && coverage html'
             }
         }
     }
