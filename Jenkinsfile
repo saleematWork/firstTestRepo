@@ -60,24 +60,5 @@ pipeline {
         
     }
     
-    post {
-        always {
-            archiveArtifacts artifacts: '**/coverage.xml,**/test-reports/**/*.xml'
-            cleanWs()
-        }
-        success {
-            emailext (
-                subject: "SUCCESS: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                body: "The build was successful!\nCheck console output at ${env.BUILD_URL}",
-                to: "dev-team@example.com"
-            )
-        }
-        failure {
-            emailext (
-                subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                body: "The build failed!\nCheck console output at ${env.BUILD_URL}",
-                to: "dev-team@example.com"
-            )
-        }
     }
 }
