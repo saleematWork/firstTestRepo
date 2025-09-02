@@ -31,8 +31,8 @@ pipeline {
         stage('Unit Tests') {
            
             steps {
-              
-            }           
+            }
+        }           
         
         
         stage('Integration Tests') {
@@ -41,7 +41,7 @@ pipeline {
                
             }
         }    
-        }
+        
     }
 }
 
