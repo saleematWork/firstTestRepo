@@ -16,6 +16,7 @@ pipeline {
         stage('Setup') {
         
             steps {
+                echo "Hello world setup"
               
             }
             
@@ -23,7 +24,7 @@ pipeline {
         
         stage('Lint') {
             steps {
-               
+                echo "Hello world Lint"               
             }
         }
 
@@ -31,6 +32,7 @@ pipeline {
         stage('Unit Tests') {
            
             steps {
+                echo "Hello world unit test"
             }
         }           
         
@@ -38,6 +40,7 @@ pipeline {
         stage('Integration Tests') {
           
             steps {
+                echo "Hello world Integration tests"
                
             }
         }    
