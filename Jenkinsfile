@@ -26,8 +26,7 @@ pipeline {
             }
         }
 
-        /*
-        
+
         stage('Unit Tests') {
             steps {
                 sh '''
@@ -87,5 +86,4 @@ pipeline {
             )
         }
     }
-    */
 }
