@@ -33,7 +33,7 @@ pipeline {
             steps {
               
             }           
-       
+        
         
         stage('Integration Tests') {
           
@@ -41,7 +41,7 @@ pipeline {
                
             }
         }    
-    }
+        }
     }
 }
 
@@ -49,5 +49,6 @@ pipeline {
         
         
     
-    }
-}
+
+
+
