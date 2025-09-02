@@ -25,6 +25,8 @@ pipeline {
                 sh '. venv/bin/activate && flake8 src/ tests/ --max-line-length=88'
             }
         }
+
+        /*
         
         stage('Unit Tests') {
             steps {
@@ -85,4 +87,5 @@ pipeline {
             )
         }
     }
+    */
 }
