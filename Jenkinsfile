@@ -14,11 +14,12 @@ pipeline {
         }
         
         stage('Setup') {
+            /*
             steps {
-              /* sh 'python -m venv venv'
+               sh 'python -m venv venv'
                 sh '. venv/bin/activate && pip install -r requirements.txt'
-              */
             }
+            */
         }
         
         stage('Lint') {
@@ -29,24 +30,25 @@ pipeline {
 
 
         stage('Unit Tests') {
+            /*
             steps {
-               /* sh '''
+                sh '''
                 . venv/bin/activate && 
                 python -m pytest tests/ -v --cov=src --cov-report=xml:coverage.xml
                 '''
-                */
             }
-            /*
+            */
        
         
         stage('Integration Tests') {
+            /*
             steps {
-               /* sh '''
+                sh '''
                 . venv/bin/activate && 
                 python -m pytest tests/test_integration.py -v
                 '''
-                */
             }
+             */
         }
         
         stage('Generate Reports') {
@@ -55,6 +57,7 @@ pipeline {
               //  sh '. venv/bin/activate && coverage html'
             }
         }
+        
     }
     
     post {
