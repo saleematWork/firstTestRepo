@@ -40,7 +40,7 @@ pipeline {
         stage('Integration Tests') {
           
             steps {
-                echo "Hello world Integration tests"
+                echo "Hello world, Integration tests"
                
             }
         }    
