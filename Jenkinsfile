@@ -24,7 +24,11 @@ pipeline {
         
         stage('Lint') {
             steps {
-                echo "Hello world Lint"               
+                echo "Hello world Lint"    
+                script {
+                    docker.image('python:3.10-slim').inside {
+                        sh 'mainCode1.py'
+                    }
             }
         }
 
